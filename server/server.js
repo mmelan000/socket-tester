@@ -17,7 +17,7 @@ const socketIO = require('socket.io')(http, {
 });
 
 const PORT = process.env.PORT || 3002;
-console.log(PORT);
+console.log(process.env);
 
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
