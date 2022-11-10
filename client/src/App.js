@@ -14,12 +14,12 @@ import socketIO from 'socket.io-client';
 import {
   ApolloClient,
   ApolloProvider,
-  createHttpLink,
+  HttpLink,
   InMemoryCache,
 } from '@apollo/client';
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
+const httpLink = new HttpLink({
+  uri: 'https://socket-io-server-for-array-game-production.up.railway.app/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -37,12 +37,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// let origin = 'http://localhost:3002';
+let origin = 'http://localhost:3002';
 
-// if (process.env.NODE_ENV === 'production') {
-const origin =
-  'https://socket-io-server-for-array-game-production.up.railway.app:5925';
-// }
+if (process.env.NODE_ENV === 'production') {
+  origin = 'https://array-the-game-production.up.railway.app:443';
+}
 
 const socket = socketIO.connect(origin);
 export default function App() {
