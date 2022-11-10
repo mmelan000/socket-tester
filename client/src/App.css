@@ -1,0 +1,320 @@
+body {
+  /* background: #000; */
+  background: radial-gradient(
+    circle,
+    rgba(235, 169, 75, 1) 0%,
+    rgba(255, 107, 125, 1) 100%
+  );
+  min-height: 100vh;
+  min-width: auto;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.navbar {
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+}
+
+#array-brand {
+  cursor: pointer;
+  max-width: 25%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-section {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3vh;
+  text-align: center;
+
+  background-image: linear-gradient(#000000, #000000),
+    linear-gradient(#000000, #000000), linear-gradient(#000000, #000000),
+    linear-gradient(#000000, #000000);
+
+  background-repeat: no-repeat;
+  background-size: 20px 15px;
+  /* // ^^^ This value should be equal to width of left OR right border. */
+  background-position: top left, top right, bottom left, bottom right;
+
+  border: solid #000000;
+  border-width: 0 15px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.logo {
+  max-width: 50%;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.lobby-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.log-and-chat {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+}
+
+.timer-and-board {
+  width: 120%;
+  height: 60vh;
+}
+
+.dice-and-player {
+  width: 80%;
+}
+
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 25vw;
+}
+
+.chat-log-container {
+  overflow-y: scroll;
+  height: 25vh;
+}
+
+.main-body footer {
+  justify-content: flex-end;
+}
+
+/* Prevent selection of text */
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/* nav > div {
+  display: inline;
+  padding: 5px;
+} */
+
+.dice-roller {
+  text-align: center;
+}
+
+.Gameboard {
+  width: 100%;
+  /* margin: auto; */
+  /* border-radius: 2%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 5px; */
+}
+
+.Gameboard-header {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  width: 35vw;
+}
+
+.game-log {
+  width: 25vw;
+  height: 25vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px;
+  border-style: solid;
+  margin: 5px;
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1.5vh;
+}
+
+.game-log-header {
+  font-weight: 700;
+  /* border: 1px;
+  border-style: dashed; */
+  text-align: center;
+}
+
+.game-log-container {
+  /* border: 1px;
+  border-style: solid; */
+  height: 100%;
+  max-height: 100%;
+}
+
+.game-log > li:nth-child(even) {
+  background-color: #bbb;
+}
+
+.game-log > li:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.game-tile {
+  display: flex;
+  text-align: center;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+}
+
+.game-tile p {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  font-size: 3vw;
+  margin: 0;
+  font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
+}
+
+.team-card-container {
+  float: right;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.team-card {
+  height: 10vh;
+  width: 20vw;
+  border: 1px;
+  border-style: solid;
+  margin: 5px;
+}
+
+.timer {
+  text-align: center;
+}
+
+/* .footer-wrapper {
+  width: 100vw;
+  height: 100vh;
+} */
+
+footer {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------- For Mobile Displays (PORTRAIT) ----------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .navbar {
+    margin-left: 0;
+    margin-right: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #array-brand {
+    cursor: pointer;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .about-section {
+    padding-left: 0;
+    padding-right: 0;
+    background-size: 20px 9px;
+    border-width: 0 9px;
+    font-size: 1.5vh;
+  }
+
+  .about-section ul {
+    padding-left: 0;
+  }
+
+  .Gameboard {
+    max-width: 100%;
+  }
+
+  .Gameboard-tile p {
+    font-size: 4vh;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------- For Mobile Displays (LANDSCAPE) ---------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 989px) and (orientation: landscape) {
+  .Gameboard {
+    max-width: 43vw;
+    max-height: 100%;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------- For Tablet Sized Displays (PORTRAIT) ---------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 601px) and (max-width: 1499px) and (orientation: portrait) {
+  .Gameboard {
+    max-width: 100%;
+  }
+
+  .game-tile p {
+    font-size: 4vh;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------- For Tablet Sized Displays (Landscape) ---------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 990px) and (max-width: 1499px) and (orientation: landscape) {
+  .Gameboard {
+    max-width: 50vw;
+    max-height: 100%;
+  }
+}
