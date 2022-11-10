@@ -37,11 +37,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-let origin = 'http://localhost:3002';
+// let origin = 'http://localhost:3002';
 
-if (process.env.NODE_ENV === 'production') {
-  origin = 'socket-io-server-for-array-game-production.up.railway.app:7627';
-}
+// if (process.env.NODE_ENV === 'production') {
+const origin =
+  'https://socket-io-server-for-array-game-production.up.railway.app:5925';
+// }
 
 const socket = socketIO.connect(origin);
 export default function App() {
