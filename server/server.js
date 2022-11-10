@@ -6,9 +6,19 @@ const app = express();
 const http = require('http').Server(app);
 let origin = 'http://localhost:3000';
 // const io = require('socket.io');
+const PORT = process.env.PORT || 3002;
+console.log(process.env);
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
 if (process.env.NODE_ENV === 'production') {
-  origin = '*';
+  origin = 'https://socket-tester-production.up.railway.app/';
   // '*' cors policy
   // socket-io-server-for-array-game-production.up.railway.app // connection timed out
   // socket-tester-production.up.railway.app // connection timed out
@@ -22,18 +32,8 @@ const socketIO = require('socket.io')(http, {
   },
 });
 
-const PORT = process.env.PORT || 3002;
-console.log(process.env);
-
 // app.use(cors());
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  );
-  next();
-});
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
