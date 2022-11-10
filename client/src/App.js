@@ -37,18 +37,18 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-let origin = 'http://localhost:3002';
+let socketServer = 'http://localhost:3002';
 
 if (process.env.NODE_ENV === 'production') {
-  origin = 'socket-io-server-for-array-game-production.up.railway.app';
+  socketServer = 'socket-io-server-for-array-game-production.up.railway.app';
   // socket-tester-production.up.railway.app
   // socket-tester-production.up.railway.app:5776
-  // socket-io-server-for-array-game-production.up.railway.app:5776
+  // socket-io-server-for-array-game-production.up.railway.app:5776 // connection timed out
 }
 
 console.log(process.env);
 
-const socket = socketIO.connect(origin);
+const socket = socketIO.connect(socketServer);
 export default function App() {
   console.log('app.js');
   let room;
