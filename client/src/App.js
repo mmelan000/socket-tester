@@ -40,7 +40,7 @@ const client = new ApolloClient({
 let origin = 'http://localhost:3002';
 
 if (process.env.NODE_ENV === 'production') {
-  origin = 'https://array-the-game-production.up.railway.app:443';
+  origin = 'socket-io-server-for-array-game-production.up.railway.app:7627';
 }
 
 const socket = socketIO.connect(origin);
