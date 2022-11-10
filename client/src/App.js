@@ -40,7 +40,7 @@ const client = new ApolloClient({
 let socketServer = 'http://localhost:3002';
 
 if (process.env.NODE_ENV === 'production') {
-  socketServer = 'socket-io-server-for-array-game-production.up.railway.app';
+  socketServer = 'https://socket-tester-production.up.railway.app/';
   // socket-tester-production.up.railway.app
   // socket-tester-production.up.railway.app:5776
   // socket-io-server-for-array-game-production.up.railway.app:5776 // connection timed out

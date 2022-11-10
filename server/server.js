@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
   next();
 });
 if (process.env.NODE_ENV === 'production') {
-  origin = 'https://socket-tester-production.up.railway.app/';
+  origin = '*';
   // '*' cors policy
   // socket-io-server-for-array-game-production.up.railway.app // connection timed out
   // socket-tester-production.up.railway.app // connection timed out
