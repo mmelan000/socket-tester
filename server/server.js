@@ -8,9 +8,10 @@ let origin = 'http://localhost:3000';
 // const io = require('socket.io');
 
 if (process.env.NODE_ENV === 'production') {
-  origin = 'socket-tester-production.up.railway.app';
-  // socket-io-server-for-array-game-production.up.railway.app:3000
+  origin = 'socket-io-server-for-array-game-production.up.railway.app:3000';
+  //
   // socket-io-server-for-array-game-production.up.railway.app // tried
+  // socket-tester-production.up.railway.app
   // socket-tester-production.up.railway.app:3000
 }
 console.log(origin);
