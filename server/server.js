@@ -8,11 +8,12 @@ let origin = 'http://localhost:3000';
 // const io = require('socket.io');
 
 if (process.env.NODE_ENV === 'production') {
-  origin = 'socket-tester-production.up.railway.app:3000';
+  origin = '*';
   // '*' cors policy
   // socket-io-server-for-array-game-production.up.railway.app // connection timed out
   // socket-tester-production.up.railway.app // connection timed out
   //socket-io-server-for-array-game-production.up.railway.app:3000 // connection timed out
+  // socket-tester-production.up.railway.app:3000 timed out
 }
 console.log(origin);
 const socketIO = require('socket.io')(http, {
